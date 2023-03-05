@@ -6,17 +6,6 @@ import TitleComponent from "./components/TitleComponent/TitleComponent";
 import "./index.css";
 
 function App() {
-  const setNewColor = (color) => {
-    var colors = {
-      red: "#FB6964",
-      blue: "#82e7f0",
-      green: "#73A857",
-    };
-    let newColor = colors[color];
-    var r = document.querySelector(":root");
-    r.style.setProperty("--background-color", newColor);
-  };
-
   const [displayTime, setDisplayTime] = useState(25 * 60);
   const [breakTime, setBreakTime] = useState(5 * 60);
   const [sessionTime, setSessionTime] = useState(25 * 60);
@@ -101,7 +90,7 @@ function App() {
   return (
     <div className="App">
       <TitleComponent onBreak={onBreak} />
-      <Timer time={formatTime(displayTime)} />
+      <Timer time={formatTime(displayTime)} timerOn={timerOn} />
       <OptionComponent
         optionName="Break Length"
         type={"break"}

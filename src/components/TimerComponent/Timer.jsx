@@ -1,7 +1,7 @@
 import React from "react";
 
-const Timer = ({ time }) => {
-  return <div className="timer">{time}</div>;
+const Timer = ({ time, timerOn }) => {
+  return <div className={timerOn ? "timerActive" : "timer"}>{time}</div>;
 };
 
 export default Timer;
