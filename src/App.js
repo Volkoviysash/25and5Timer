@@ -17,26 +17,65 @@ function App() {
     r.style.setProperty("--background-color", newColor);
   };
 
-  const [breakLength, setBreakLength] = useState(5);
-  const [sessionLength, setSessionLength] = useState(25);
+  const [displayTime, setDisplayTime] = useState(25 * 60);
+  const [breakTime, setBreakTime] = useState(5 * 60);
+  const [sessionTime, setSessionTime] = useState(25 * 60);
+  const [timerOn, setTimerOn] = useState(false);
+
+  const formatTime = (time) => {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    return (
+      (minutes < 10 ? "0" + minutes : minutes) +
+      ":" +
+      (seconds < 10 ? "0" + seconds : seconds)
+    );
+  };
+
+  const changeTime = (amountTime, type) => {
+    if (type == "break") {
+      if (breakTime <= 60 && amountTime < 0) return;
+      setBreakTime((prev) => prev + amountTime);
+    } else if (type == "session") {
+      if (sessionTime <= 60 && amountTime < 0) return;
+      setSessionTime((prev) => prev + amountTime);
+    }
+    if (!timerOn) {
+      setDisplayTime((prev) => prev + amountTime);
+    }
+  };
+
+  const timerOnOff = () => {
+    setTimerOn(!timerOn);
+    console.log(timerOn);
+  };
+
+  const timerReset = () => {
+    setBreakTime(5 * 60);
+    setSessionTime(25 * 60);
+    setDisplayTime(25 * 60);
+  };
 
   return (
     <div className="App">
       <TitleComponent />
-      <Timer />
+      <Timer time={formatTime(displayTime)} />
       <OptionComponent
         optionName="Break Length"
-        optionValue={breakLength}
-        state={breakLength}
-        stateChange={setBreakLength}
+        type={"break"}
+        optionValue={breakTime}
+        changeTime={changeTime}
+        formatTime={formatTime}
       />
       <OptionComponent
         optionName="Session Length"
-        optionValue={sessionLength}
-        state={sessionLength}
-        stateChange={setSessionLength}
+        type={"session"}
+        optionValue={sessionTime}
+        changeTime={changeTime}
+        formatTime={formatTime}
       />
-      <RemotePanel />
+      <RemotePanel timerOnOff={timerOnOff} timerReset={timerReset} />
     </div>
   );
 }
