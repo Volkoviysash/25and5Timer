@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import RemotePanel from "./components/RemotePanelComponent/RemotePanel";
 import Timer from "./components/TimerComponent/Timer";
 import OptionComponent from "./components/TimerOptionComponent/TimerOption";
 import TitleComponent from "./components/TitleComponent/TitleComponent";
 import "./index.css";
+import breakSound from "./sound/breakSound.mp3";
 
 function App() {
-  const [displayTime, setDisplayTime] = useState(25 * 60);
+  const [displayTime, setDisplayTime] = useState(5);
   const [breakTime, setBreakTime] = useState(5 * 60);
-  const [sessionTime, setSessionTime] = useState(25 * 60);
+  const [sessionTime, setSessionTime] = useState(5);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
-  const [breakAudio, setBreakAudio] = useState(
-    new Audio("./sound/break-sound.mp3")
-  );
+  const audio = new Audio(breakSound);
 
   const playBreakAudio = () => {
-    breakAudio.currentTime = 0;
-    breakAudio.play();
+    console.log(audio.src);
+    audio.currentTime = 0;
+    audio.play();
   };
 
   const formatTime = (time) => {
@@ -38,9 +38,9 @@ function App() {
     } else if (type == "session") {
       if (sessionTime <= 60 && amountTime < 0) return;
       setSessionTime((prev) => prev + amountTime);
-    }
-    if (!timerOn) {
-      setDisplayTime((prev) => prev + amountTime);
+      if (!timerOn) {
+        setDisplayTime(sessionTime + amountTime);
+      }
     }
   };
 
@@ -77,7 +77,6 @@ function App() {
     if (timerOn) {
       clearInterval(localStorage.getItem("interval-id"));
     }
-
     setTimerOn(!timerOn);
   };
 

@@ -58,7 +58,7 @@ body {
 }
 
 .title {
-  color: rgb(251, 168, 255);
+  color: rgb(138, 49, 141);
   text-shadow: 1px 1px 1px rgb(65, 65, 65);
   grid-row: 4;
   grid-column: 1/3;
