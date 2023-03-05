@@ -2,10 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
-const RemotePanel = ({ timerOnOff, timerReset }) => {
+const RemotePanel = ({ controlTime, timerReset }) => {
   return (
     <div className="remote">
-      <button onClick={timerOnOff}>
+      <button onClick={controlTime}>
         <FontAwesomeIcon icon={faPlay} />
         <FontAwesomeIcon icon={faPause} />
       </button>

@@ -21,6 +21,15 @@ function App() {
   const [breakTime, setBreakTime] = useState(5 * 60);
   const [sessionTime, setSessionTime] = useState(25 * 60);
   const [timerOn, setTimerOn] = useState(false);
+  const [onBreak, setOnBreak] = useState(false);
+  const [breakAudio, setBreakAudio] = useState(
+    new Audio("./sound/break-sound.mp3")
+  );
+
+  const playBreakAudio = () => {
+    breakAudio.currentTime = 0;
+    breakAudio.play();
+  };
 
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
@@ -46,9 +55,30 @@ function App() {
     }
   };
 
-  const timerOnOff = () => {
+  const controlTime = () => {
+    let second = 1000;
+    let date = new Date().getTime();
+    let nextDate = new Date().getTime() + second;
+    let onBreakVariable = onBreak;
+    if (!timerOn) {
+      let interval = setInterval(() => {
+        date = new Date().getTime();
+        if (date > nextDate) {
+          setDisplayTime((prev) => {
+            return prev - 1;
+          });
+          nextDate += second;
+        }
+      }, 30);
+      localStorage.clear();
+      localStorage.setItem("interval-id", interval);
+    }
+
+    if (timerOn) {
+      clearInterval(localStorage.getItem("interval-id"));
+    }
+
     setTimerOn(!timerOn);
-    console.log(timerOn);
   };
 
   const timerReset = () => {
@@ -75,7 +105,7 @@ function App() {
         changeTime={changeTime}
         formatTime={formatTime}
       />
-      <RemotePanel timerOnOff={timerOnOff} timerReset={timerReset} />
+      <RemotePanel controlTime={controlTime} timerReset={timerReset} />
     </div>
   );
 }
