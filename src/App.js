@@ -65,6 +65,17 @@ function App() {
         date = new Date().getTime();
         if (date > nextDate) {
           setDisplayTime((prev) => {
+            if (prev <= 0 && !onBreakVariable) {
+              playBreakAudio();
+              onBreakVariable = true;
+              setOnBreak(true);
+              return breakTime;
+            } else if (prev <= 0 && onBreakVariable) {
+              playBreakAudio();
+              onBreakVariable = false;
+              setOnBreak(false);
+              return sessionTime;
+            }
             return prev - 1;
           });
           nextDate += second;
@@ -89,7 +100,7 @@ function App() {
 
   return (
     <div className="App">
-      <TitleComponent />
+      <TitleComponent onBreak={onBreak} />
       <Timer time={formatTime(displayTime)} />
       <OptionComponent
         optionName="Break Length"
