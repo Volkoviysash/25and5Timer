@@ -4,7 +4,7 @@
 
 <h2>About the project</h2>
 
-  <p>Your Pomodoro timer app is an excellent tool for boosting productivity and managing time efficiently. The app is designed with the popular Pomodoro Technique in mind, which involves working for a set period and then taking a short break before resuming work. Your app simplifies this process, allowing users to set the work and break durations according to their preferences. The app also includes customizable options such as setting the number of Pomodoro cycles, enabling or disabling notifications, and more. Additionally, the app's user interface is clean and easy to navigate, making it user-friendly for anyone looking to improve their productivity. With your Pomodoro timer app, users can take control of their time, increase their focus, and get more done in less time.</p>
+  <p>My Pomodoro timer app is an excellent tool for boosting productivity and managing time efficiently. The app is designed with the popular Pomodoro Technique in mind, which involves working for a set period and then taking a short break before resuming work. I've simplified this process, allowing users to set the work and break durations according to their preferences. My app also includes customizable options such as setting the number of Pomodoro cycles, enabling or disabling notifications, and more. Additionally, the app's user interface is clean and easy to navigate, making it user-friendly for anyone looking to improve their productivity. With my Pomodoro timer app, users can take control of their time, increase their focus, and get more done in less time.</p>
 
 👉 Live Demo: <a href='*'>Live Demo</a>
 
