@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+<div align='center'>
+  <h1>Backlagano App</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>About the project</h2>
 
-## Available Scripts
+  <p>Your Pomodoro timer app is an excellent tool for boosting productivity and managing time efficiently. The app is designed with the popular Pomodoro Technique in mind, which involves working for a set period and then taking a short break before resuming work. Your app simplifies this process, allowing users to set the work and break durations according to their preferences. The app also includes customizable options such as setting the number of Pomodoro cycles, enabling or disabling notifications, and more. Additionally, the app's user interface is clean and easy to navigate, making it user-friendly for anyone looking to improve their productivity. With your Pomodoro timer app, users can take control of their time, increase their focus, and get more done in less time.</p>
 
-In the project directory, you can run:
+👉 Live Demo: <a href='*'>Live Demo</a>
 
-### `npm start`
+<h3>Build with:</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+» React JS <br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Screenshots of the Project 📸</h2>
+<br>
+<h3 align='center'>25 + 5 timer</h3>
+ <img src='https://user-images.githubusercontent.com/90283311/236709499-a76662c6-1f2a-4fd7-9f8b-aac0df85e801.png' />
+<h3 align='center'>25 + 5 timer</h3>
+ <img src='https://user-images.githubusercontent.com/90283311/236709512-45720928-5f6c-440e-9a74-603e926c364a.png' />
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
